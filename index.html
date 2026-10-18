@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Delivery Plus</title>
+    <meta
+      name="description"
+      content="Delivery Plus: an open-source, event-driven food-delivery platform for Egypt. Customer, restaurant and driver apps on twelve NestJS services, shown with real screenshots."
+    />
+    <meta property="og:title" content="Delivery Plus" />
+    <meta
+      property="og:description"
+      content="One order, three apps, no hand-offs. An event-driven food-delivery platform built for Egypt, in Arabic and English."
+    />
+    <meta property="og:image" content="assets/brand/logo.png" />
+    <meta name="theme-color" content="#FF0000" />
+    <link rel="icon" type="image/png" href="assets/brand/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=JetBrains+Mono:wght@500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/site.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="container header-inner">
+        <a class="brand" href="#top" aria-label="Delivery Plus, back to top">
+          <img src="assets/brand/logo.png" alt="Delivery Plus" width="578" height="141" />
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          <span class="sr-only">Menu</span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Main" data-nav>
+          <a href="#story">The order</a>
+          <a href="#apps">Apps</a>
+          <a href="#egypt">Arabic</a>
+          <a href="#engineering">Engineering</a>
+          <a href="#status">Status</a>
+          <a class="nav-cta" href="https://github.com/Delivery-Plus0" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero" id="top">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Open source · Built for Egypt</p>
+            <h1>One order.<br />Three apps.<br /><span class="accent">No hand-offs.</span></h1>
+            <p class="lede">
+              Delivery Plus is an event-driven food-delivery platform. A customer orders, the restaurant cooks, a
+              driver is dispatched automatically, and everyone follows the same order live, in Arabic or English.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#story">Follow an order</a>
+              <a class="button button-ghost" href="https://github.com/Delivery-Plus0/delivery-plus" target="_blank" rel="noopener">
+                Backend on GitHub
+              </a>
+            </div>
+            <p class="hero-note">
+              <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M7.6 13.4 4.2 10l-1.4 1.4 4.8 4.8 10-10-1.4-1.4z" /></svg>
+              Every screen on this page is a real screenshot of the running apps. No mockups.
+            </p>
+          </div>
+
+          <div class="hero-visual" aria-label="The three apps during one delivery">
+            <figure class="device laptop hero-laptop">
+              <div class="laptop-screen">
+                <img src="assets/screens/restaurant/flow/05-restaurant-new-order.png" alt="Restaurant order board with a new paid order" width="1440" height="900" />
+              </div>
+              <div class="laptop-base" aria-hidden="true"></div>
+              <figcaption>Restaurant</figcaption>
+            </figure>
+            <figure class="device phone hero-phone hero-phone-a">
+              <img src="assets/screens/customer/flow/11-customer-driver-card-map.png" alt="Customer order screen with the driver card and the live map" width="824" height="1830" />
+              <figcaption>Customer</figcaption>
+            </figure>
+            <figure class="device phone hero-phone hero-phone-b">
+              <img src="assets/screens/driver/flow/10-driver-assigned.png" alt="Driver app showing an automatically assigned job" width="824" height="1830" />
+              <figcaption>Driver</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="container">
+          <dl class="stats" aria-label="Delivery Plus in numbers">
+            <div><dt>Apps</dt><dd>3</dd><p>customer · restaurant · driver</p></div>
+            <div><dt>Backend services</dt><dd>12</dd><p>NestJS, behind one gateway</p></div>
+            <div><dt>Event streams</dt><dd>3</dd><p>Kafka topics, each with a dead-letter topic</p></div>
+            <div><dt>UI test flows</dt><dd>26</dd><p>Maestro, across the three apps</p></div>
+            <div><dt>Real screenshots</dt><dd>103</dd><p>English, Arabic, states, one full order</p></div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- The story of one order -->
+      <section class="section story" id="story" aria-labelledby="story-title">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow">The story of one order</p>
+            <h2 id="story-title">Watch one real order travel through all three apps</h2>
+            <p>
+              These screenshots come from a single order placed on the local test stack: the customer, the kitchen and
+              the driver each act in their own app, and the backend connects them.
+            </p>
+          </header>
+
+          <div class="story-player" data-story>
+            <ol class="story-steps" role="tablist" aria-label="Steps of the order" data-story-steps></ol>
+            <div class="story-stage">
+              <div class="story-device" data-story-device>
+                <img data-story-image alt="" />
+              </div>
+              <div class="story-caption" aria-live="polite">
+                <p class="story-role" data-story-role></p>
+                <h3 data-story-title></h3>
+                <p data-story-text></p>
+              </div>
+              <div class="story-controls">
+                <button class="icon-button" type="button" data-story-prev aria-label="Previous step">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.4 6.4 14 5l-7 7 7 7 1.4-1.4L9.8 12z" /></svg>
+                </button>
+                <span class="story-count" data-story-count></span>
+                <button class="icon-button" type="button" data-story-next aria-label="Next step">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.6 17.6 10 19l7-7-7-7-1.4 1.4 5.6 5.6z" /></svg>
+                </button>
+                <button class="button button-small" type="button" data-story-play aria-pressed="false">Play</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Apps -->
+      <section class="section apps" id="apps" aria-labelledby="apps-title">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow">Three apps, one backend</p>
+            <h2 id="apps-title">Each role gets the app it needs</h2>
+          </header>
+
+          <div class="app-cards">
+            <article class="app-card">
+              <span class="app-chip app-chip-customer">Customer app</span>
+              <h3>Order, pay, follow the driver</h3>
+              <ul>
+                <li>Browse restaurants, search, filter to <em>Open now</em></li>
+                <li>Checkout with the delivery fee quoted by the server</li>
+                <li>Live order screen: phase, driver card, map over Server-Sent Events</li>
+                <li>Rate the driver, order history with outcome reasons</li>
+                <li>Profile photo and phone verification by code</li>
+              </ul>
+              <p class="app-tech">Expo · React Native · Expo Router</p>
+            </article>
+            <article class="app-card">
+              <span class="app-chip app-chip-restaurant">Restaurant app</span>
+              <h3>Run the kitchen from one board</h3>
+              <ul>
+                <li>New, In the kitchen and Ready lanes that refresh on their own</li>
+                <li>Today's orders and food revenue, Cairo time</li>
+                <li>Order details and reject with a reason the customer sees</li>
+                <li>Menu editor: categories, items, photos, sold-out toggles</li>
+                <li>Open, Busy or Closed status</li>
+              </ul>
+              <p class="app-tech">Expo Router for the web</p>
+            </article>
+            <article class="app-card">
+              <span class="app-chip app-chip-driver">Driver app</span>
+              <h3>Jobs come to you</h3>
+              <ul>
+                <li>Go online and receive jobs automatically, no dispatcher</li>
+                <li>One button for the next step, each with a confirmation</li>
+                <li>Shares location every 10 seconds while on a job</li>
+                <li>History and a wallet fed only by the earnings ledger</li>
+                <li>Profile with vehicle, review status and rating</li>
+              </ul>
+              <p class="app-tech">Expo · React Native</p>
+            </article>
+          </div>
+
+          <div class="gallery" data-gallery>
+            <div class="gallery-bar">
+              <div class="segmented" role="tablist" aria-label="App" data-gallery-apps>
+                <button type="button" role="tab" data-app="customer" aria-selected="true">Customer</button>
+                <button type="button" role="tab" data-app="restaurant" aria-selected="false">Restaurant</button>
+                <button type="button" role="tab" data-app="driver" aria-selected="false">Driver</button>
+              </div>
+              <div class="chips" role="group" aria-label="Filter screenshots" data-gallery-filters>
+                <button type="button" data-group="all" aria-pressed="true">All</button>
+                <button type="button" data-group="en" aria-pressed="false">English</button>
+                <button type="button" data-group="ar" aria-pressed="false" lang="ar">العربية</button>
+                <button type="button" data-group="states" aria-pressed="false">States</button>
+                <button type="button" data-group="flow" aria-pressed="false">The order</button>
+              </div>
+            </div>
+            <p class="gallery-count" data-gallery-count aria-live="polite"></p>
+            <ul class="gallery-grid" data-gallery-grid></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Egypt / Arabic -->
+      <section class="section egypt" id="egypt" aria-labelledby="egypt-title">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow">Built for Egypt</p>
+            <h2 id="egypt-title">Arabic first, right to left, priced in pounds</h2>
+            <p>
+              Arabic is the default language unless the phone is set to English, and every screen mirrors for
+              right-to-left reading. Prices are Egyptian pounds and phone numbers are Egyptian mobiles, normalized to
+              +20.
+            </p>
+          </header>
+
+          <div class="lang-switch">
+            <div class="segmented" role="group" aria-label="Language" data-lang-switch>
+              <button type="button" data-lang="en" aria-pressed="true">English</button>
+              <button type="button" data-lang="ar" aria-pressed="false" lang="ar">العربية</button>
+            </div>
+          </div>
+
+          <div class="lang-pairs">
+            <figure class="lang-pair" data-pair>
+              <div class="device phone">
+                <img src="assets/screens/customer/en/home.png" data-en="assets/screens/customer/en/home.png" data-ar="assets/screens/customer/ar/home.png" alt="Customer home" width="824" height="1830" loading="lazy" />
+              </div>
+              <figcaption>Customer · Home</figcaption>
+            </figure>
+            <figure class="lang-pair" data-pair>
+              <div class="device phone">
+                <img src="assets/screens/customer/en/checkout.png" data-en="assets/screens/customer/en/checkout.png" data-ar="assets/screens/customer/ar/checkout.png" alt="Checkout with the delivery fee" width="824" height="1830" loading="lazy" />
+              </div>
+              <figcaption>Customer · Checkout</figcaption>
+            </figure>
+            <figure class="lang-pair" data-pair>
+              <div class="device phone">
+                <img src="assets/screens/driver/en/wallet-pending.png" data-en="assets/screens/driver/en/wallet-pending.png" data-ar="assets/screens/driver/ar/wallet-pending.png" alt="Driver wallet" width="824" height="1830" loading="lazy" />
+              </div>
+              <figcaption>Driver · Wallet</figcaption>
+            </figure>
+            <figure class="lang-pair lang-pair-wide" data-pair>
+              <div class="device laptop">
+                <div class="laptop-screen">
+                  <img src="assets/screens/restaurant/en/order-board.png" data-en="assets/screens/restaurant/en/order-board.png" data-ar="assets/screens/restaurant/ar/order-board.png" alt="Restaurant order board" width="1440" height="900" loading="lazy" />
+                </div>
+                <div class="laptop-base" aria-hidden="true"></div>
+              </div>
+              <figcaption>Restaurant · Order board</figcaption>
+            </figure>
+          </div>
+
+          <ul class="facts">
+            <li><strong>Translated notifications.</strong> The backend sends a message key and its values, so each person reads an alert in their own language.</li>
+            <li><strong>Words kept as written.</strong> A restaurant's rejection reason sits inside the Arabic sentence in the words the restaurant used.</li>
+            <li><strong>Checked on every change.</strong> A test fails if any text in an app is missing its Arabic translation.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Engineering -->
+      <section class="section engineering" id="engineering" aria-labelledby="engineering-title">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow">Under the hood</p>
+            <h2 id="engineering-title">Twelve services, one source of truth</h2>
+            <p>
+              The apps only ever talk to the API gateway. Behind it, each service owns its own data, and state changes
+              travel between services as Kafka events.
+            </p>
+          </header>
+
+          <figure class="architecture">
+            <svg viewBox="0 0 1000 600" role="img" aria-labelledby="arch-title arch-desc">
+              <title id="arch-title">Delivery Plus architecture</title>
+              <desc id="arch-desc">
+                The customer, driver and restaurant apps call one API gateway over HTTPS with a JWT. The gateway routes to
+                eleven services. Order, payment and delivery services publish Kafka events that other services consume.
+                PostgreSQL, Redis and S3-compatible storage hold the data.
+              </desc>
+              <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0 0 10 5 0 10z" class="arch-arrowhead" />
+                </marker>
+              </defs>
+
+              <g class="arch-apps">
+                <rect x="60" y="24" width="240" height="64" rx="16" />
+                <text x="180" y="62">Customer app</text>
+                <rect x="380" y="24" width="240" height="64" rx="16" />
+                <text x="500" y="62">Restaurant app</text>
+                <rect x="700" y="24" width="240" height="64" rx="16" />
+                <text x="820" y="62">Driver app</text>
+              </g>
+
+              <g class="arch-links">
+                <path d="M180 88 V120 H500 V150" marker-end="url(#arrow)" />
+                <path d="M500 88 V150" marker-end="url(#arrow)" />
+                <path d="M820 88 V120 H500 V150" marker-end="url(#arrow)" />
+              </g>
+              <text class="arch-label" x="512" y="104">HTTPS + JWT</text>
+
+              <g class="arch-gateway">
+                <rect x="300" y="152" width="400" height="58" rx="14" />
+                <text x="500" y="187">API Gateway</text>
+              </g>
+
+              <path class="arch-links" d="M500 210 V246" marker-end="url(#arrow)" />
+
+              <g class="arch-services">
+                <rect class="arch-frame" x="40" y="250" width="920" height="150" rx="20" />
+                <text class="arch-frame-label" x="64" y="276">Services · each owns its data</text>
+                <g class="arch-pills">
+                  <rect x="64" y="292" width="140" height="40" rx="20" /><text x="134" y="317">auth</text>
+                  <rect x="214" y="292" width="140" height="40" rx="20" /><text x="284" y="317">user</text>
+                  <rect x="364" y="292" width="140" height="40" rx="20" /><text x="434" y="317">restaurant</text>
+                  <rect x="514" y="292" width="140" height="40" rx="20" /><text x="584" y="317">menu</text>
+                  <rect x="664" y="292" width="140" height="40" rx="20" /><text x="734" y="317">cart</text>
+                  <rect x="814" y="292" width="122" height="40" rx="20" /><text x="875" y="317">tracking</text>
+                  <rect class="arch-hot" x="64" y="344" width="170" height="40" rx="20" /><text x="149" y="369">order</text>
+                  <rect class="arch-hot" x="244" y="344" width="170" height="40" rx="20" /><text x="329" y="369">payment</text>
+                  <rect class="arch-hot" x="424" y="344" width="170" height="40" rx="20" /><text x="509" y="369">delivery</text>
+                  <rect x="604" y="344" width="150" height="40" rx="20" /><text x="679" y="369">driver</text>
+                  <rect x="764" y="344" width="172" height="40" rx="20" /><text x="850" y="369">notification</text>
+                </g>
+              </g>
+
+              <g class="arch-events">
+                <path d="M149 384 V436" />
+                <path d="M329 384 V436" />
+                <path d="M509 384 V436" />
+                <path d="M850 384 V436" />
+                <rect x="40" y="436" width="920" height="64" rx="16" />
+                <text x="500" y="466">Kafka</text>
+                <text class="arch-small" x="500" y="488">order.events · payment.events · delivery.events · each with a dead-letter topic</text>
+              </g>
+
+              <g class="arch-stores">
+                <rect x="40" y="526" width="290" height="56" rx="14" /><text x="185" y="551">PostgreSQL</text>
+                <text class="arch-small" x="185" y="570">a database per service</text>
+                <rect x="355" y="526" width="290" height="56" rx="14" /><text x="500" y="551">Redis</text>
+                <text class="arch-small" x="500" y="570">cart · live location · dedup</text>
+                <rect x="670" y="526" width="290" height="56" rx="14" /><text x="815" y="551">Object storage</text>
+                <text class="arch-small" x="815" y="570">photos, uploaded directly</text>
+              </g>
+            </svg>
+            <figcaption>The order, payment and delivery services drive the life of an order through events; the others react to them.</figcaption>
+          </figure>
+
+          <div class="feature-grid">
+            <article class="feature">
+              <h3>Automatic dispatch</h3>
+              <p>
+                When the kitchen marks an order ready, the delivery service creates the delivery and claims a free driver
+                in one compare-and-set write. Two orders can never take the same driver, and orders wait and retry until
+                someone comes online.
+              </p>
+            </article>
+            <article class="feature">
+              <h3>Events that can't get lost</h3>
+              <p>
+                An order change and its event are written in the same database transaction (transactional outbox). Event
+                ids are deterministic, every consumer skips what it already handled, and failures go to a dead-letter
+                topic that can be replayed.
+              </p>
+            </article>
+            <article class="feature">
+              <h3>Live tracking you can trust</h3>
+              <p>
+                The customer's map updates over Server-Sent Events and falls back to polling. A driver's position only
+                counts for their own current delivery, and the screen never says "Live" for old data.
+              </p>
+            </article>
+            <article class="feature">
+              <h3>Money you can audit</h3>
+              <p>
+                A flat EGP 25 delivery fee is split 50/50 and frozen on each order. Driver earnings go to an append-only
+                ledger and settle after 12 hours. Refunds are full, once per payment, under a row lock, with an audit
+                record.
+              </p>
+            </article>
+            <article class="feature">
+              <h3>Checkout that can't overcharge</h3>
+              <p>
+                At checkout the cart is checked again against the menu. If a price changed or an item sold out, the order
+                is refused with what changed and the cart is updated, so nobody pays a price they didn't see.
+              </p>
+            </article>
+            <article class="feature">
+              <h3>Safe by default</h3>
+              <p>
+                Roles live in the JWT, every service checks ownership, and internal routes need signed requests. Phone
+                codes are stored only as hashes, with attempt limits and cooldowns.
+              </p>
+            </article>
+          </div>
+
+          <div class="quality">
+            <div class="quality-copy">
+              <h3>Tested the way people use it</h3>
+              <p>
+                Each app has its own UI test suite, written in Maestro and run in CI. The flagship test drives all three
+                apps through one order: the customer orders, the restaurant app cooks it, the driver app delivers it, and
+                the customer rates the driver.
+              </p>
+              <p>Every backend pull request also has to pass:</p>
+              <ul class="checks">
+                <li>Unit tests and lint in every service</li>
+                <li>A full-stack run of the critical workflow</li>
+                <li>Migrations on a fresh database</li>
+                <li>CodeQL, dependency audit and container scans</li>
+              </ul>
+            </div>
+            <div class="quality-shots">
+              <figure class="device phone">
+                <img src="assets/screens/customer/flow/22-customer-alerts.png" alt="Alerts for every stage of the order" width="824" height="1830" loading="lazy" />
+              </figure>
+              <figure class="device phone">
+                <img src="assets/screens/driver/flow/18-driver-wallet-pending.png" alt="Driver wallet with the delivery's EGP 12.50 share pending" width="824" height="1830" loading="lazy" />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Status -->
+      <section class="section status" id="status" aria-labelledby="status-title">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow">Honest status</p>
+            <h2 id="status-title">What works today, and what doesn't yet</h2>
+          </header>
+          <div class="status-grid">
+            <div class="status-col status-done">
+              <h3>Working end to end</h3>
+              <ul>
+                <li>Ordering, kitchen workflow, automatic dispatch and delivery</li>
+                <li>Live tracking, ratings, order history and alerts</li>
+                <li>Delivery fee, driver earnings ledger and wallet</li>
+                <li>Cancellations with automatic full refunds</li>
+                <li>Menu editing with photos, profile photos</li>
+                <li>Arabic and English with right-to-left layouts</li>
+              </ul>
+            </div>
+            <div class="status-col status-next">
+              <h3>Not there yet</h3>
+              <ul>
+                <li>Payments and refunds are simulated: no payment gateway yet</li>
+                <li>No SMS provider, so phone verification is off in production</li>
+                <li>No push notifications and no arrival-time estimate</li>
+                <li>No bank payouts for drivers</li>
+                <li>Production operations (metrics, backups, deploys) in progress</li>
+                <li>Screens are web builds; native Android and iOS are not yet tested</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stack -->
+      <section class="section stack" aria-labelledby="stack-title">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow">Stack</p>
+            <h2 id="stack-title">What it's built with</h2>
+          </header>
+          <div class="stack-groups">
+            <div>
+              <h3>Backend</h3>
+              <ul class="tags">
+                <li>NestJS</li><li>TypeScript</li><li>Node.js 22</li><li>PostgreSQL 16</li><li>TypeORM</li>
+                <li>Apache Kafka</li><li>Redis</li><li>S3-compatible storage</li><li>OpenAPI</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Apps</h3>
+              <ul class="tags">
+                <li>Expo</li><li>React Native</li><li>Expo Router</li><li>React Native Web</li><li>OpenStreetMap</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Quality and delivery</h3>
+              <ul class="tags">
+                <li>Maestro</li><li>Jest</li><li>Vitest</li><li>GitHub Actions</li><li>Docker Compose</li>
+                <li>CodeQL</li><li>Trivy</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Closing -->
+      <section class="section closing" aria-labelledby="closing-title">
+        <div class="container closing-inner">
+          <img class="closing-mark" src="assets/brand/icon.png" alt="" width="126" height="127" />
+          <h2 id="closing-title">Read the code</h2>
+          <p>The backend platform is open source. The issue tracker and roadmap live there too.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://github.com/Delivery-Plus0/delivery-plus" target="_blank" rel="noopener">delivery-plus on GitHub</a>
+            <a class="button button-ghost" href="https://github.com/Delivery-Plus0" target="_blank" rel="noopener">The organization</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <img src="assets/brand/logo.png" alt="Delivery Plus" width="578" height="141" />
+        <p>
+          Screenshots captured on 11 October 2026 from the apps' merged code, on a local test stack with seeded test
+          data. Customer and driver screens are web builds at phone width.
+        </p>
+      </div>
+    </footer>
+
+    <dialog class="lightbox" data-lightbox aria-labelledby="lightbox-title">
+      <div class="lightbox-inner">
+        <button class="icon-button lightbox-close" type="button" data-lightbox-close aria-label="Close">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19l5.6-5.6 5.6 5.6 1.4-1.4-5.6-5.6z" /></svg>
+        </button>
+        <button class="icon-button lightbox-nav lightbox-prev" type="button" data-lightbox-prev aria-label="Previous screenshot">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.4 6.4 14 5l-7 7 7 7 1.4-1.4L9.8 12z" /></svg>
+        </button>
+        <figure class="lightbox-figure">
+          <img data-lightbox-image alt="" />
+          <figcaption>
+            <h3 id="lightbox-title" data-lightbox-title></h3>
+            <p data-lightbox-meta></p>
+          </figcaption>
+        </figure>
+        <button class="icon-button lightbox-nav lightbox-next" type="button" data-lightbox-next aria-label="Next screenshot">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.6 17.6 10 19l7-7-7-7-1.4 1.4 5.6 5.6z" /></svg>
+        </button>
+      </div>
+    </dialog>
+
+    <script src="js/screens.js"></script>
+    <script src="js/site.js"></script>
+  </body>
+</html>
